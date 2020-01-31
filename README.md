@@ -61,26 +61,13 @@ feature that is not yet supported, consider submitting a pull request!
 
 ### Quickstart
 
-Before using RustaCUDA, you must install the CUDA development libraries for your system. Version
-8.0 or newer is required. You must also have a CUDA-capable GPU installed with the appropriate
-drivers.
+You do not need the CUDA development libraries installed for your system, only
+the cuda driver which is usually bundled with the nvidia graphics driver. To run
+the tests or to use the library you most also have a CUDA-capable GPU.
 
-First, set the `CUDA_LIBRARY_PATH` environment variable to the location of your CUDA headers:
-
-```text
-export CUDA_LIBRARY_PATH="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64"
-```
-
-Some Ubuntu users have encountered linker errors when using CUDA_LIBRARY_PATH. If you see an error
-like this:
-
-```text
-  = note: /usr/bin/ld: cannot find -lcudart                                                              
-          /usr/bin/ld: cannot find -lcublas                                                              
-          collect2: error: ld returned 1 exit status 
-```
-
-Using `LIBRARY_PATH` instead of `CUDA_LIBRARY_PATH` seems to help.
+If there are any issues with linking, set the `CUDA_LIBRARY_PATH` environment 
+variable to the location of your CUDA driver, which on windows is `nvcuda.dll`, 
+on linux it is `libcuda.so`, and on macos it is `libcuda.dylib`
 
 Now, to start building a basic CUDA crate. Add the following to your `Cargo.toml`:
 
@@ -195,7 +182,7 @@ RustaCUDA is dual-licensed under the Apache 2.0 license and the MIT license.
 
 ### Requirements
 
-RustaCUDA requires at least CUDA version 8 to be installed.
+RustaCUDA requires a recent CUDA driver to be installed.
 
 ### Related Projects
 
