@@ -116,7 +116,7 @@ use crate::device::Device;
 use crate::error::{CudaResult, DropResult, ToResult};
 use crate::private::Sealed;
 use crate::CudaApiVersion;
-use cuda_sys::cuda::{self, CUcontext};
+use cuda_sys::{self as cuda, CUcontext};
 use std::mem;
 use std::mem::transmute;
 use std::ptr;

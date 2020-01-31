@@ -4,7 +4,7 @@ use crate::memory::device::{CopyDestination, DeviceBuffer};
 use crate::memory::DeviceCopy;
 use crate::memory::DevicePointer;
 use crate::stream::Stream;
-use cuda_sys::cuda;
+use cuda_sys as cuda;
 use std::iter::{ExactSizeIterator, FusedIterator};
 use std::mem;
 use std::ops::{

@@ -4,7 +4,7 @@ use crate::memory::malloc::{cuda_free, cuda_malloc};
 use crate::memory::DeviceCopy;
 use crate::memory::DevicePointer;
 use crate::stream::Stream;
-use cuda_sys::cuda;
+use cuda_sys as cuda;
 use std::mem;
 use std::ops::{Deref, DerefMut};
 

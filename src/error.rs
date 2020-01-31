@@ -7,7 +7,7 @@
 //! RustaCUDA) can fail. Even those functions which have no normal failure conditions can return
 //! errors related to previous asynchronous launches.
 
-use cuda_sys::cuda::{self, cudaError_t};
+use cuda_sys::{self as cuda, cudaError_enum as cudaError_t};
 use std::error::Error;
 use std::ffi::CStr;
 use std::fmt;

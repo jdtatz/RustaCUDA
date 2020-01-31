@@ -3,7 +3,7 @@
 use crate::error::{CudaResult, DropResult, ToResult};
 use crate::function::Function;
 use crate::memory::{CopyDestination, DeviceCopy, DevicePointer};
-use cuda_sys::cuda;
+use cuda_sys as cuda;
 use std::ffi::{c_void, CStr};
 use std::fmt;
 use std::marker::PhantomData;

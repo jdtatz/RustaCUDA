@@ -13,7 +13,7 @@
 // TODO: I'm not sure that these events are/can be safe by Rust's model of safety; they inherently
 // create state which can be mutated even while an immutable borrow is held.
 
-use crate::cuda_sys::cuda::{
+use cuda_sys::{
     cuEventCreate, cuEventDestroy_v2, cuEventElapsedTime, cuEventQuery, cuEventRecord,
     cuEventSynchronize, CUevent,
 };

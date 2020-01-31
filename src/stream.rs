@@ -13,7 +13,7 @@
 use crate::error::{CudaResult, DropResult, ToResult};
 use crate::event::Event;
 use crate::function::{BlockSize, Function, GridSize};
-use cuda_sys::cuda::{self, cudaError_t, CUstream};
+use cuda_sys::{self as cuda, cudaError_enum as cudaError_t, CUstream};
 use std::ffi::c_void;
 use std::mem;
 use std::panic;

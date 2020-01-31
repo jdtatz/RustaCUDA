@@ -3,7 +3,7 @@
 use crate::context::{CacheConfig, SharedMemoryConfig};
 use crate::error::{CudaResult, ToResult};
 use crate::module::Module;
-use cuda_sys::cuda::{self, CUfunction};
+use cuda_sys::{self as cuda, CUfunction};
 use std::marker::PhantomData;
 use std::mem::transmute;
 

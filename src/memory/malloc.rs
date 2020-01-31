@@ -2,7 +2,7 @@ use super::DeviceCopy;
 use crate::error::*;
 use crate::memory::DevicePointer;
 use crate::memory::UnifiedPointer;
-use cuda_sys::cuda;
+use cuda_sys as cuda;
 use std::mem;
 use std::os::raw::c_void;
 use std::ptr;
