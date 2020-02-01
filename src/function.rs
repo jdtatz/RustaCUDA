@@ -149,8 +149,17 @@ pub enum FunctionAttribute {
     /// option "-Xptxas --dlcm=ca" set.
     CacheModeCa = 7,
 
+    /// The maximum size in bytes for the dynamically-allocated shared memory
+    MaxDynamicSharedMemory = 8,
+
+    /// On devices where the L1 cache and shared memory use the same hardware resources,
+    /// this sets the shared memory carveout preference, in percent of the total shared memory.
+    /// This is only a hint, and the driver can choose a different ratio
+    /// if required to execute the function
+    PreferredSharedMemoryCarveout = 9,
+
     #[doc(hidden)]
-    __Nonexhaustive = 8,
+    __Nonexhaustive = 10,
 }
 
 /// Handle to a global kernel function.
@@ -423,7 +432,7 @@ mod test {
 
     #[test]
     fn test_launch() -> Result<(), Box<dyn Error>> {
-        let _context = quick_init();
+        let _context = quick_init()?;
         let ptx_text = CString::new(include_str!("../resources/add.ptx"))?;
         let module = Module::load_from_string(&ptx_text)?;
 

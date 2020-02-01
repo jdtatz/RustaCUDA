@@ -192,8 +192,41 @@ pub enum DeviceAttribute {
     ComputePreemptionSupported = 90,
     /// Device can access host registered memory at the same virtual address as the CPU
     CanUseHostPointerForRegisteredMem = 91,
+    /// Device supports cuStreamBatchMemOp and related APIs
+    CanUseStreamMemOps = 92,
+    /// Device supports 64-bit cuStreamBatchMemOp and related APIs
+    CanUse64BitStreamMemOps = 93,
+    /// Device supports CU_STREAM_WAIT_VALUE_NOR
+    CanUseStreamWaitValueNOR = 94,
+    /// Device supports launching cooperative kernels via cuLaunchCooperativeKernel
+    CanUseCooperativeKernels = 95,
+    /// Device supports launching cooperative kernels via cuLaunchCooperativeKernelMultiDevice
+    CanUseMultiDeviceCooperativeKernels = 96,
+    /// Maximum optin shared memory per block
+    MaxSharedMemPerBlockOptin = 97,
+    /// Device supports both the CU_STREAM_WAIT_VALUE_FLUSH flag and
+    /// the CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES MemOp
+    CanFlushRemoteWrites = 98,
+    /// Device supports host memory registration via cudaHostRegister
+    CanUseHostMemRegistration = 99,
+    /// Device accesses pageable memory via the host's page tables
+    PageableMemAccessUsesHostPageTables = 100,
+    /// The host can directly access managed memory on the device without migration
+    DirectManagedMemAccessFromHost = 101,
+    /// Device supports virtual address management APIs like
+    /// cuMemAddressReserve, cuMemCreate, cuMemMap and related APIs
+    CanUseVirtualAddressManagement = 102,
+    /// Device supports exporting memory to a posix file descriptor with
+    /// cuMemExportToShareableHandle, if requested via cuMemCreate
+    CanExportMemToPOSIXFileDescriptor = 103,
+    /// Device supports exporting memory to a Win32 NT handle with cuMemExportToShareableHandle,
+    /// if requested via cuMemCreate
+    CanExportMemToWin32NTHandle = 104,
+    /// Device supports exporting memory to a Win32 KMT handle with cuMemExportToShareableHandle,
+    /// if requested via cuMemCreate
+    CanExportMemToWin32KMTHandle = 105,
     #[doc(hidden)]
-    __NonExhaustive = 92,
+    __NonExhaustive = 106,
 }
 
 /// Opaque handle to a CUDA device.
